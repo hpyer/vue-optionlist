@@ -10,4 +10,4 @@ fieldset {
 .custom .optionlist-item {position: relative; overflow: hidden; margin-right: 10px;}
 .custom .optionlist-item-input {position: absolute; left: -9999px; visibility: hidden;}
 .custom .optionlist-item-text {width: 80px; height: 30px; line-height: 30px; text-align: center; background: #ccc; color: #333; border-radius: 5px;}
-.custom .optionlist-item-input:optioned + .optionlist-item-text {background: #3485fb; color: #fff;}
+.custom .optionlist-item-input:checked + .optionlist-item-text {background: #3485fb; color: #fff;}
