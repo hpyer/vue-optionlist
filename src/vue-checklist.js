@@ -6,11 +6,11 @@
 
 (function (global, factory) {
   if (typeof module !== 'undefined' && module.exports) {
-    const Vue = require('vue');
+    const Vue = require('vue/dist/vue.common.js');
     module.exports = factory(Vue);
   }
   else if (typeof define !== 'undefined' && define.amd) {
-    define('VueCheckList', ['vue'], factory());
+    define('VueCheckList', ['vue/dist/vue.common.js'], factory());
   }
   else {
     global.VueCheckList = factory(global.Vue);
@@ -45,7 +45,7 @@
     };
   }
 
-  return Vue.component('checklist', {
+  return Vue.component('VueCheckList', {
     template: '\
       <div>\
         <div class="checklist-item" v-for="item in list">\
