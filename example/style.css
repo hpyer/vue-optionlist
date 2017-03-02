@@ -1,0 +1,13 @@
+
+fieldset {
+  margin-bottom: 20px;
+}
+
+.checklist-item {display: inline-block;}
+.checklist-item-input {}
+.checklist-item-text {display: inline-block;}
+
+.custom .checklist-item {position: relative; overflow: hidden; margin-right: 10px;}
+.custom .checklist-item-input {position: absolute; left: -9999px; visibility: hidden;}
+.custom .checklist-item-text {width: 80px; height: 30px; line-height: 30px; text-align: center; background: #ccc; color: #333; border-radius: 5px;}
+.custom .checklist-item-input:checked + .checklist-item-text {background: #3485fb; color: #fff;}
