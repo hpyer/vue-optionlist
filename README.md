@@ -1,41 +1,41 @@
-# vue-checklist
+# vue-optionlist
 
-> Checklist component for Vue2
+> Optionlist component for Vue2
 
 ### 示例
 
-https://hpyer.github.io/vue-checklist/
+https://hpyer.github.io/vue-optionlist/
 
 ### 安装
 
 #### For Node
 
 ```js
-npm install -S vue-checklist
+npm install -S vue-optionlist
 ```
 
 #### For 浏览器
 
 ```html
 <script src="vue.js"></script>
-<script src="vue-checklist.js"></script>
+<script src="vue-optionlist.js"></script>
 ```
 
 ### 使用
 
 ```js
 // For Node
-var VueCheckList = require('vue-checklist');
+var VueOptionList = require('vue-optionlist');
 
 // For Node (ES6)
-import VueCheckList from 'vue-checklist';
+import VueOptionList from 'vue-optionlist';
 
-// 如果是浏览器中引入的js，已经定义了一个全局变量VueCheckList，可以直接使用
+// 如果是浏览器中引入的js，已经定义了一个全局变量VueOptionList，可以直接使用
 
 new Vue({
   el: '#app',
   components: {
-    'vue-check-list': VueCheckList
+    'vue-option-list': VueOptionList
   },
   data () {
     return {
@@ -58,7 +58,7 @@ new Vue({
   },
   template: `
     <div id="example">
-      <vue-check-list :list="list" :selected="['2', '3']" ref="checkList" @change="onChange"></vue-check-list>
+      <vue-option-list :list="list" :selected="['2', '3']" ref="optionList" @change="onChange"></vue-option-list>
       <div>
         <button @click="selectAll">全选</button>
         <button @click="unselectAll">全不选</button>
@@ -75,16 +75,16 @@ new Vue({
       this.selected = val
     },
     selectAll: function () {
-      this.$refs.checkList.selectAll()
+      this.$refs.optionList.selectAll()
     },
     unselectAll: function () {
-      this.$refs.checkList.unselectAll()
+      this.$refs.optionList.unselectAll()
     },
     selectReverse: function () {
-      this.$refs.checkList.selectReverse()
+      this.$refs.optionList.selectReverse()
     },
     getValues: function () {
-      alert(this.$refs.checkList.getValues())
+      alert(this.$refs.optionList.getValues())
     }
   }
 })
@@ -101,9 +101,9 @@ new Vue({
 您可以自定义选项的模版，此功能用到的作用域插槽，因此需要 Vue >= 2.1.0 [详见这里](https://cn.vuejs.org/v2/guide/components.html#作用域插槽)
 
 ```html
-<vue-check-list :list="list" @change="onChange">
+<vue-option-list :list="list" @change="onChange">
   <template scope="props">
     <span class="text">{{props.item.text}}</span>
   </template>
-</vue-check-list>
+</vue-option-list>
 ```

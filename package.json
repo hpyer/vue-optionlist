@@ -1,16 +1,16 @@
 {
-  "name": "vue-checklist",
+  "name": "vue-optionlist",
   "version": "1.0.1",
-  "description": "Checklist component for Vue2",
+  "description": "Optionlist component for Vue2",
   "keywords": [
     "vue",
     "vue2",
     "component",
-    "checklist",
+    "optionlist",
     "checkbox",
     "radio"
   ],
-  "main": "dist/vue-checklist.min.js",
+  "main": "dist/vue-optionlist.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node example/runtime/server.js",
@@ -18,12 +18,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/hpyer/vue-checklist.git"
+    "url": "https://github.com/hpyer/vue-optionlist.git"
   },
   "bugs": {
-    "url": "https://github.com/hpyer/vue-checklist/issues"
+    "url": "https://github.com/hpyer/vue-optionlist/issues"
   },
-  "homepage": "https://github.com/hpyer/vue-checklist",
+  "homepage": "https://github.com/hpyer/vue-optionlist",
   "author": "Hpyer",
   "license": "MIT",
   "devDependencies": {

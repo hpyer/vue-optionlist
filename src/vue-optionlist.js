@@ -1,5 +1,5 @@
 /*!
- * Checklist component for Vue2
+ * Optionlist component for Vue2
  * @author Hpyer
  * @license MIT
  */
@@ -10,10 +10,10 @@
     module.exports = factory(Vue);
   }
   else if (typeof define !== 'undefined' && define.amd) {
-    define('VueCheckList', ['vue/dist/vue.common.js'], factory());
+    define('VueOptionList', ['vue/dist/vue.common.js'], factory());
   }
   else {
-    global.VueCheckList = factory(global.Vue);
+    global.VueOptionList = factory(global.Vue);
   }
 } (window, (function (Vue) {
 
@@ -45,13 +45,13 @@
     };
   }
 
-  return Vue.component('VueCheckList', {
+  return Vue.component('VueOptionList', {
     template: '\
       <div>\
-        <div class="checklist-item" v-for="item in list">\
-          <input v-if="multi" class="checklist-item-input" type="checkbox" :value="item.value" v-model="values">\
-          <input v-else class="checklist-item-input" type="radio" :value="item.value" v-model="values">\
-          <div class="checklist-item-text" @click="toggleItem(item)">\
+        <div class="optionlist-item" v-for="item in list">\
+          <input v-if="multi" class="optionlist-item-input" type="optionbox" :value="item.value" v-model="values">\
+          <input v-else class="optionlist-item-input" type="radio" :value="item.value" v-model="values">\
+          <div class="optionlist-item-text" @click="toggleItem(item)">\
             <slot :item="item">{{item.text}}</slot>\
           </div>\
         </div>\

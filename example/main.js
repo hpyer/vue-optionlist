@@ -1,11 +1,11 @@
 import Vue from 'vue'
-import VueCheckList from '../dist/vue-checklist.min.js'
+import VueOptionList from '../dist/vue-optionlist.min.js'
 import './style.css'
 
 new Vue({
   el: '#app',
   components: {
-    VueCheckList
+    VueOptionList
   },
   data () {
     return {
@@ -43,21 +43,21 @@ new Vue({
     <div id="example">
       <fieldset>
         <legend>普通</legend>
-        <VueCheckList :list="list" @change="onChange1"></VueCheckList>
+        <VueOptionList :list="list" @change="onChange1"></VueOptionList>
         <div>
           所选：{{selected1}}
         </div>
       </fieldset>
       <fieldset>
         <legend>默认值</legend>
-        <VueCheckList :list="list" :selected="['2', '3', '5']" @change="onChange2"></VueCheckList>
+        <VueOptionList :list="list" :selected="['2', '3', '5']" @change="onChange2"></VueOptionList>
         <div>
           所选：{{selected2}}
         </div>
       </fieldset>
       <fieldset>
         <legend>单选</legend>
-        <VueCheckList :list="list" :multi="false" @change="onChange3"></VueCheckList>
+        <VueOptionList :list="list" :multi="false" @change="onChange3"></VueOptionList>
         <div>
           所选：{{selected3}}
         </div>
@@ -65,7 +65,7 @@ new Vue({
       <fieldset>
         <legend>组件方法</legend>
         <p>注：全选／全不选／反选三个方法只支持多选框</p>
-        <VueCheckList :list="list" :selected="['2']" ref="checkList4" @change="onChange4"></VueCheckList>
+        <VueOptionList :list="list" :selected="['2']" ref="optionList4" @change="onChange4"></VueOptionList>
         <div>
           <button @click="selectAll">全选</button>
           <button @click="unselectAll">全不选</button>
@@ -78,17 +78,17 @@ new Vue({
       </fieldset>
       <fieldset>
         <legend>自定义样式</legend>
-        <VueCheckList class="custom" :list="list" @change="onChange5"></VueCheckList>
+        <VueOptionList class="custom" :list="list" @change="onChange5"></VueOptionList>
         <div>
           所选：{{selected5}}
         </div>
         <h4>自定义模版：</h4>
         <p>注：此功能需要Vue 2.1以上，<a href="https://cn.vuejs.org/v2/guide/components.html#作用域插槽" target="_blank">点击这里了解更多</a></p>
-        <VueCheckList class="custom" :list="list" @change="onChange6">
+        <VueOptionList class="custom" :list="list" @change="onChange6">
           <template scope="props">
             <span class="text">{{props.item.text}}</span>
           </template>
-        </VueCheckList>
+        </VueOptionList>
         <div>
           所选：{{selected6}}
         </div>
@@ -109,16 +109,16 @@ new Vue({
       this.selected4 = val
     },
     selectAll: function () {
-      this.$refs.checkList4.selectAll()
+      this.$refs.optionList4.selectAll()
     },
     unselectAll: function () {
-      this.$refs.checkList4.unselectAll()
+      this.$refs.optionList4.unselectAll()
     },
     selectReverse: function () {
-      this.$refs.checkList4.selectReverse()
+      this.$refs.optionList4.selectReverse()
     },
     getValues: function () {
-      alert(this.$refs.checkList4.getValues())
+      alert(this.$refs.optionList4.getValues())
     },
     onChange5: function (val) {
       this.selected5 = val
