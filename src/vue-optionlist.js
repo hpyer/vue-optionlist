@@ -49,7 +49,7 @@
     template: '\
       <div>\
         <div class="optionlist-item" v-for="item in list">\
-          <input v-if="multi" class="optionlist-item-input" type="optionbox" :value="item.value" v-model="values">\
+          <input v-if="multi" class="optionlist-item-input" type="checkbox" :value="item.value" v-model="values">\
           <input v-else class="optionlist-item-input" type="radio" :value="item.value" v-model="values">\
           <div class="optionlist-item-text" @click="toggleItem(item)">\
             <slot :item="item">{{item.text}}</slot>\
