@@ -1,12 +1,14 @@
 /*!
  * Optionlist component for Vue2
+ * @version 1.0.4
  * @author Hpyer
  * @license MIT
+ * @homepage https://github.com/hpyer/vue-optionlist
  */
 
 (function (global, factory) {
   if (typeof module !== 'undefined' && module.exports) {
-    const Vue = require('vue/dist/vue.common.js');
+    var Vue = require('vue/dist/vue.common.js');
     module.exports = factory(Vue);
   }
   else if (typeof define !== 'undefined' && define.amd) {
