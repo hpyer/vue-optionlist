@@ -1,5 +1,10 @@
 # vue-optionlist
 
+[![npm](https://img.shields.io/npm/v/vue-optionlist.svg)](https://www.npmjs.com/package/vue-optionlist)
+[![npm](https://img.shields.io/npm/dt/vue-optionlist.svg)](https://www.npmjs.com/package/vue-optionlist)
+[![GitHub stars](https://img.shields.io/github/stars/hpyer/vue-optionlist.svg?style=social&label=Star)](https://github.com/hpyer/vue-optionlist)
+[![npm](https://img.shields.io/npm/l/vue-optionlist.svg)](https://www.npmjs.com/package/vue-optionlist)
+
 > Optionlist component for Vue2
 
 ### 示例

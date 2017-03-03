@@ -41,6 +41,13 @@ new Vue({
   },
   template: `
     <div id="example">
+      <h3>Vue OptionList Component Example</h3>
+      <div style="margin-bottom: 20px">
+        <a href="https://www.npmjs.com/package/vue-optionlist" target="_blank"><img src="https://img.shields.io/npm/v/vue-optionlist.svg"></a>
+        <a href="https://www.npmjs.com/package/vue-optionlist" target="_blank"><img src="https://img.shields.io/npm/dt/vue-optionlist.svg"></a>
+        <a href="https://github.com/hpyer/vue-optionlist" target="_blank"><img src="https://img.shields.io/github/stars/hpyer/vue-optionlist.svg?style=social&label=Star"></a>
+        <a href="https://www.npmjs.com/package/vue-optionlist" target="_blank"><img src="https://img.shields.io/npm/l/vue-optionlist.svg"></a>
+      </div>
       <fieldset>
         <legend>普通</legend>
         <VueOptionList :list="list" @change="onChange1"></VueOptionList>
