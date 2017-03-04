@@ -95,11 +95,12 @@ new Vue({
 })
 ```
 
-### Props
+### 属性
 
 * `list` Array 数据列表，每个元素均为对象，其属性有：value(选项的值，必须)、text（选项的描述文字，自定义选项模版时可选，否则必填）。如：`[{value: '1', text: 'text1'}, {value: '2', text: 'text2'}]`
 * `multi` Boolean 是否多选，true表示多选（默认）， false表示单选
 * `selected` Array/String 默认选中的选项值，`multi`为true时传数组，为false时直接传某个选项的值
+* `limit` Number 最大选项数，默认：0表示不限制，`multi`为true时有效
 
 ### slot
 
@@ -112,3 +113,8 @@ new Vue({
   </template>
 </vue-option-list>
 ```
+
+### 事件
+
+* `change` 选项值发生变化时触发，会带有一个表示选项值参数。`multi`为true时参数为数组，为false时则为所选选项的值
+* `limit` 所选选项数量超过limit的限制时触发，会带有一个表示限制选项数的参数。
