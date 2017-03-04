@@ -1,6 +1,6 @@
 /*!
  * Optionlist component for Vue2
- * @version 1.0.4
+ * @version 1.0.5
  * @author Hpyer
  * @license MIT
  * @homepage https://github.com/hpyer/vue-optionlist
@@ -47,6 +47,18 @@
     };
   }
 
+  if (typeof Array.setLimit === 'undefined') {
+    Array.prototype.setLimit = function (maxLength) {
+      maxLength = parseInt(maxLength);
+      if (maxLength > 0 && this.length > maxLength) {
+        for (var i=maxLength, j=this.length; i<j; i++) {
+          this.pop();
+        }
+      }
+      return this;
+    };
+  }
+
   return Vue.component('VueOptionList', {
     template: '\
       <div>\
@@ -70,6 +82,10 @@
       },
       selected: {
         default: null
+      },
+      limit: {
+        type: Number,
+        default: 0
       }
     },
     data () {
@@ -82,6 +98,7 @@
         var selected = this.selected;
         if (this.multi) {
           if (typeof selected != 'object') selected = [selected];
+          else selected.setLimit(this.limit);
         } else {
           if (typeof selected == 'object' && selected.length) selected = selected.pop();
         }
@@ -94,9 +111,18 @@
         }
       }
     },
+    beforeUpdate () {
+      if (this.multi) {
+        this.values = this.values.setLimit(this.limit);
+      }
+    },
     watch: {
       values: function (val) {
-        this.$emit('change', val);
+        if (this.multi && this.limit > 0 & val.length > this.limit) {
+          this.$emit('limit', this.limit);
+        } else {
+          this.$emit('change', val);
+        }
       }
     },
     methods: {
